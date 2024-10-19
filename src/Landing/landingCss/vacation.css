@@ -1,0 +1,38 @@
+.vacation_body{
+    width: 100%;
+}
+
+.vacation_page_writeUp_container{
+    width: 100%;
+    padding: 30px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.vacation_page_writeUp_container h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+.vacation_page_writeUp_container p{
+    width: 60%;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 22px;
+}
+
+.vacation_card_section{
+    width: 100%;
+    padding: 0px 80px;
+}
