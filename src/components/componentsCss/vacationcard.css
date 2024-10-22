@@ -1,6 +1,5 @@
 .destination_card_container{
     width: 100%;
-    /* background-color: red; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -56,4 +55,14 @@
     border-radius: 4px;
     border: none;
     margin-top: 10px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .destination_card{
+        width: 100%;
+    }
+
 }

@@ -42,3 +42,19 @@
     letter-spacing: 0.5px;
     line-height: 20px;
 }
+
+
+
+@media screen and (max-width: 768px){
+
+    .footer_top{
+        gap: 20px;
+        padding: 20px 16px;
+        flex-wrap: wrap;
+    }
+
+    .footer_bottom{
+        padding: 30px 16px;
+    }
+
+}
