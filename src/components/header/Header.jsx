@@ -10,6 +10,7 @@ const Header = () => {
 
   const [showMenu, setShowMenu] = useState(false);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
+  const [showAccount, setShowAccount] = useState(false);
 
   return (
     <>
@@ -18,10 +19,24 @@ const Header = () => {
           <div className='header_logo_container'>
             <img src={header_logo} alt='logo'/>
           </div>
-          <div className='header_account_container'>
+          <div 
+            className='header_account_container' 
+            style={showAccount == true ? {backgroundColor: "lightgrey"} : {backgroundColor: ""}}
+            onClick={()=>setShowAccount(!showAccount)}
+            >
             <FaRegUser className='header_account_icon'/>
             <p>Account</p>
             <MdOutlineKeyboardArrowUp/>
+            {
+              showAccount == true ? 
+              <div className='header_account_select_container'>
+                <button>Sign In</button>
+                <Link className='header_account_select_link'>
+                  <FaRegUser/>
+                  <p>My Account</p>
+                </Link>
+              </div> : null
+            }
           </div>
         </div>
         <div className='header_middle_container'>
