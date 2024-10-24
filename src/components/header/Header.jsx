@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import "./header.css";
 import header_logo from "../../assets/nato_header_main_logo.png";
 import { IoSearch, IoMenuSharp, IoCloseSharp  } from "react-icons/io5";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaRegUser } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 
 const Header = () => {
 
+  const navigate = useNavigate()
   const [showMenu, setShowMenu] = useState(false);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [showAccount, setShowAccount] = useState(false);
@@ -30,7 +31,7 @@ const Header = () => {
             {
               showAccount == true ? 
               <div className='header_account_select_container'>
-                <button>Sign In</button>
+                <button onClick={()=>navigate('/login')}>Sign In</button>
                 <Link className='header_account_select_link'>
                   <FaRegUser/>
                   <p>My Account</p>
