@@ -1,16 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./onBoarding.css";
 import onBoarding_logo from "../assets/nato_header_main_logo.png";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const Login = () => {
 
     const navigate = useNavigate();
+    const [values, setValues] = useState({
+        email: '',
+        password: ''
+    })
+    const [loading, setLoading] = useState(false)
 
-    const login = ()=>{
-        navigate("/dashboard/overview")
+    const handleChange = (e)=>{
+        const {name, value} = e.target
+        setValues({...values, [name]: value})
     }
+
+    const login = async ()=>{
+        const url = "https://nato-vacation.onrender.com/api/login"
+        try{
+            setLoading(true)
+            const response = await axios.post(url, values)
+            setLoading(false)
+            console.log(response)
+            toast.success(response.data.message)
+            localStorage.setItem("natoUser", JSON.stringify(response.data.user));
+            navigate("/")
+        }catch(error){
+            setLoading(false)
+            console.log(error)
+            toast.error(error.response.data.message)
+        }
+    }
+
+    // console.log(JSON.parse(localStorage.getItem("natoUser")))
 
   return (
     <>
@@ -35,17 +62,23 @@ const Login = () => {
                             <label>Email Address</label>
                             <input
                                 type='email'
+                                name='email'
+                                value={values.email}
+                                onChange={handleChange}
                             />
                         </div>
                         <div className='input_part'>
                             <label>Password</label>
                             <input
                                 type='text'
+                                name='password'
+                                value={values.password}
+                                onChange={handleChange}
                             />
                         </div>
                     </div>
-                    <div className='onBoarding_btn_container' onClick={login}>
-                        <button className='onBoarding_button'>Submit</button>
+                    <div className='onBoarding_btn_container'>
+                        <button className='onBoarding_button' onClick={login}>{loading == true ? "loading..." : "Submit"}</button>
                     </div>
                 </div>
                 <div className='onBoarding_right_bottom'>

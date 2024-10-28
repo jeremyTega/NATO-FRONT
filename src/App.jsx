@@ -7,6 +7,8 @@ import HomePage from './Landing/HomePage';
 import Vacation from './Landing/Vacation';
 import ScrollToTop from './ScrollToTop';
 import BookVacation from './Landing/BookVacation';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   
@@ -24,6 +26,7 @@ const App = () => {
           </Route>
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </>
   )
 }
