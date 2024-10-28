@@ -6,6 +6,7 @@ import LandingPage from './Landing/LandingPage';
 import HomePage from './Landing/HomePage';
 import Vacation from './Landing/Vacation';
 import ScrollToTop from './ScrollToTop';
+import BookVacation from './Landing/BookVacation';
 
 const App = () => {
   
@@ -19,6 +20,7 @@ const App = () => {
           <Route element={<LandingPage/>} >
             <Route path='/' element={<HomePage/>} />
             <Route path='/vacation' element={<Vacation/>} />
+            <Route path='/book-vacation' element={<BookVacation/>} />
           </Route>
         </Routes>
       </BrowserRouter>
