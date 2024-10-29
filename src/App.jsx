@@ -9,6 +9,8 @@ import ScrollToTop from './ScrollToTop';
 import BookVacation from './Landing/BookVacation';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ForgotPassword from './onBoarding/ForgotPassword';
+import ResetPassword from './onBoarding/ResetPassword';
 
 const App = () => {
   
@@ -19,6 +21,8 @@ const App = () => {
         <Routes>
           <Route path='/register' element={<Register/>} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/forgot-password' element={<ForgotPassword/>} />
+          <Route path='/reset-password/:token' element={<ResetPassword/>} />
           <Route element={<LandingPage/>} >
             <Route path='/' element={<HomePage/>} />
             <Route path='/vacation' element={<Vacation/>} />

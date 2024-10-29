@@ -11,6 +11,7 @@ const HomePage = () => {
   const navigate = useNavigate()
   const [isVisible, setIsVisible] = useState(false);
   const parentRef = useRef(null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("natoUser")) || '')
 
   const checkVisibility = () => {
     if (parentRef.current) {
@@ -24,13 +25,21 @@ const HomePage = () => {
     return () => window.removeEventListener('resize', checkVisibility);
   }, []);
 
+  const explorePackages = ()=>{
+    if(user == ''){
+      navigate("/login")
+    }else{
+      navigate("/vacation")
+    }
+  }
+
   return (
     <>
       <div className='home_page_body'>
         <section className='hero_section'>
           <h1>Plan Your Well-Deserved Break!</h1>
           <p>Discover the best vacations tailored for our heroes</p>
-          <button>Explore Packages</button>
+          <button onClick={explorePackages}>Explore Packages</button>
         </section>
 
         <section className='destination_section'>

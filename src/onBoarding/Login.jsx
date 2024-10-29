@@ -52,6 +52,10 @@ const Login = () => {
                         <RiArrowRightSLine/>
                         <h2>Create An Account</h2>
                     </div>
+                    <div onClick={()=>navigate("/forgot-password")} className='onBoarding_text_link_container forgotPassword'>
+                        <RiArrowRightSLine/>
+                        <h2>Forgot password?</h2>
+                    </div>
                 </div>
             </div>
             <div className='onBoarding_right'>

@@ -62,6 +62,11 @@
     letter-spacing: 0px;
 }
 
+.forgotPassword h2{
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .onBoarding_right{
     width: 60%;
     height: 100%;
@@ -159,6 +164,68 @@
     letter-spacing: 0.1px;
 }
 
+.forgot_password_body{
+    width: 100%;
+    padding: 40px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.forgot_password_body h1{
+    color: #000;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.forgot_password_body p{
+    color: #000;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.forgot_password_input_container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.forgot_password_input_container label{
+    color: grey;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.forgot_password_input_container input{
+    width: 100%;
+    height: 45px;
+    border: 1px solid lightgrey;
+    outline: none;
+    padding: 0px 10px;
+    border-radius: 4px;
+}
+
+.forgot_password_btn{
+    width: 40%;
+    padding: 14px 0px;
+    background-color: blue;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
 
 
 
@@ -220,6 +287,14 @@
         margin-top: 60px;
         display: flex;
         justify-content: center;
+    }
+
+    .forgot_password_input_container{
+        width: 100%;
+    }
+
+    .forgot_password_btn{
+        width: 100%;
     }
 
 }
